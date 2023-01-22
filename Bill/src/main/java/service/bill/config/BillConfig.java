@@ -15,10 +15,10 @@ public class BillConfig {
     @Bean
     public CommandLineRunner init(){
         return args -> {
-            billService.save(new BillRequest(1L,145000,1l));
-            billService.save(new BillRequest(2L,555000,3l));
-            billService.save(new BillRequest(3L,95000,2l));
-            billService.save(new BillRequest(4L,15000,1l));
+            billService.save(new BillRequest(145000,1L));
+            billService.save(new BillRequest(555000,3L));
+            billService.save(new BillRequest(95000,2L));
+            billService.save(new BillRequest(15000,1L));
         };
     }
 }

@@ -55,10 +55,10 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override
-    public List<BillResponse> getByCustumerID(Long id) {
+    public List<BillResponse> getByCustumerID(Long idCustumer) {
         List<BillResponse> bills = new ArrayList<>();
-        Custumer custumer = custumerRestClient.getCustumer(id);
-        billRepository.getBillByCustumerID(id).forEach(bill -> {
+        Custumer custumer = custumerRestClient.getCustumer(idCustumer);
+        billRepository.getBillByCustumerID(idCustumer).forEach(bill -> {
             bill.setCustumer(custumer);
             bills.add(billMapper.fromEntity(bill));});
         return bills;

@@ -11,7 +11,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillRequest {
-    private Long id;
     private int amount;
     private Long custumerID;
 }

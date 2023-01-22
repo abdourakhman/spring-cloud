@@ -16,7 +16,6 @@ public class BillResponse {
     private Long id;
     private int amount;
     private LocalDate date;
-    private Long custumerID;
     private Custumer custumer;
 }
 
