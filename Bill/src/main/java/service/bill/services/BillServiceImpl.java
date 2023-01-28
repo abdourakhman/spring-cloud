@@ -2,6 +2,7 @@ package service.bill.services;
 
 
 import org.springframework.stereotype.Service;
+import service.bill.dto.BillCustumerResponse;
 import service.bill.dto.BillRequest;
 import service.bill.dto.BillResponse;
 import service.bill.mappers.BillMapper;
@@ -55,12 +56,12 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override
-    public List<BillResponse> getByCustumerID(Long idCustumer) {
-        List<BillResponse> bills = new ArrayList<>();
+    public List<BillCustumerResponse> getByCustumerID(Long idCustumer) {
+        List<BillCustumerResponse> bills = new ArrayList<>();
         Custumer custumer = custumerRestClient.getCustumer(idCustumer);
         billRepository.getBillByCustumerID(idCustumer).forEach(bill -> {
             bill.setCustumer(custumer);
-            bills.add(billMapper.fromEntity(bill));});
+            bills.add(billMapper.fromBill(bill));});
         return bills;
     }
 

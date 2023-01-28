@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import service.bill.models.Custumer;
 
 import java.time.LocalDate;
 
@@ -11,9 +12,10 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BillResponse {
+public class BillCustumerResponse {
     private Long id;
     private int amount;
     private LocalDate date;
+    private Custumer custumer;
 }
 

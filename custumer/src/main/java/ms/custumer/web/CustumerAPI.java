@@ -3,6 +3,7 @@ package ms.custumer.web;
 import ms.custumer.dto.CustumerRequest;
 import ms.custumer.dto.CustumerResponse;
 import ms.custumer.services.CustumerService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,9 +11,15 @@ import java.util.List;
 @RequestMapping("/api")
 @RestController
 public class CustumerAPI {
+    @Value("${param}")
+    private String config;
     private CustumerService custumerService;
     public CustumerAPI(CustumerService custumerService){this.custumerService = custumerService;}
 
+    @GetMapping( "/config")
+    public String getConfig(){
+        return "configuration:" + this.config;
+    }
     @GetMapping( "/custumers")
     public List<CustumerResponse> getAllCustumers(){
         return  custumerService.getCustumers();

@@ -1,5 +1,6 @@
 package service.bill.services;
 
+import service.bill.dto.BillCustumerResponse;
 import service.bill.dto.BillRequest;
 import service.bill.dto.BillResponse;
 
@@ -10,6 +11,6 @@ public interface BillService {
     BillResponse update(BillRequest billRequest);
     List<BillResponse> getAll();
     BillResponse get(Long id);
-    List<BillResponse> getByCustumerID(Long id);
+    List<BillCustumerResponse> getByCustumerID(Long id);
     void delete(Long id );
 }
